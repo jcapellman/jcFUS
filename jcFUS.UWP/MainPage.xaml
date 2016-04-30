@@ -29,24 +29,43 @@
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="Auto" />
                 <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="*" />
                 <ColumnDefinition Width="Auto" />
             </Grid.ColumnDefinitions>
 
-            <ToggleButton Grid.Column="0">
+            <ToggleButton Grid.Column="0" Background="#3e3e3e">
                 <SymbolIcon Width="48" Height="48" Symbol="Microphone" />
             </ToggleButton>
 
-            <ToggleButton Grid.Column="1">
+            <ToggleButton Grid.Column="1" Background="#3e3e3e">
                 <SymbolIcon Width="48" Height="48" Symbol="Video" />
             </ToggleButton>
 
-            <Button Grid.Column="2">
+            <Button Grid.Column="2" HorizontalAlignment="Right" Background="#3e3e3e">
                 <SymbolIcon Width="48" Height="48" Symbol="Setting" />
+            </Button>
+
+            <Button Grid.Column="3" HorizontalAlignment="Right" Background="#3e3e3e">
+                <SymbolIcon Width="48" Height="48" Symbol="LeaveChat" />
             </Button>
         </Grid>
         
         <Grid  Margin="10,10,10,10"  Grid.Row="1" MinWidth="100" Grid.RowSpan="2" Grid.Column="0" Background="#2e2e2e">
-            
+            <GridView ItemsSource="{Binding ConnectedPeople}" Margin="10,10,10,10">
+                <GridView.ItemTemplate>
+                    <DataTemplate>
+                        <Grid BorderBrush="{Binding Color}" Width="72" Height="72" Margin="0,0,10,10" BorderThickness="2">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                            </Grid.RowDefinitions>
+
+                            <SymbolIcon Grid.Row="0" MinWidth="48" MaxWidth="64" MinHeight="48" MaxHeight="64" Symbol="ContactPresence" Foreground="{Binding Color}" />
+                            <TextBlock Grid.Row="1" Text="{Binding Name}" FontSize="12" HorizontalAlignment="Center" Foreground="White" />
+                        </Grid>
+                    </DataTemplate>
+                </GridView.ItemTemplate>
+            </GridView>
         </Grid>
 
         <Grid Margin="10,10,10,10" MinWidth="100" Grid.Row="0" Grid.RowSpan="3" Grid.Column="1" Background="#2e2e2e">
