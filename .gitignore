@@ -1,0 +1,9 @@
+.vs/
+bin/
+obj/
+project.lock.json
+*.xproj.user
+packages/
+/csharp/jcTM.UWP/jcTM.UWP.csproj.user
+/csharp/jcTM.UWP.IoT/jcTM.UWP.IoT.csproj.user
+/csharp/jcTM.WebAPI/jcTM.WebAPI.csproj.user
