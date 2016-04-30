@@ -1,10 +1,9 @@
-﻿using System;
-
-using Windows.ApplicationModel;
+﻿using Windows.ApplicationModel;
 using Windows.ApplicationModel.Activation;
+using Windows.UI;
+using Windows.UI.ViewManagement;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
-using Windows.UI.Xaml.Navigation;
 
 namespace jcFUS.UWP {
 
@@ -14,13 +13,33 @@ namespace jcFUS.UWP {
             this.Suspending += OnSuspending;
         }
 
-        protected override void OnLaunched(LaunchActivatedEventArgs e) {
-            Frame rootFrame = Window.Current.Content as Frame;
+        private void LoadTheme() {
+            var mainColor = Color.FromArgb(0xFF, 0x2e, 0x2e, 0x2e);
+            var actionColor = Color.FromArgb(0xFF, 0x4e, 0x4e, 0x4e);
             
+            var AppView = ApplicationView.GetForCurrentView();
+
+            AppView.TitleBar.ButtonInactiveBackgroundColor = mainColor;
+            AppView.TitleBar.ButtonInactiveForegroundColor = mainColor;
+            AppView.TitleBar.ButtonBackgroundColor = actionColor;
+            AppView.TitleBar.ButtonForegroundColor = mainColor;
+
+            AppView.TitleBar.ButtonHoverBackgroundColor = mainColor;
+            AppView.TitleBar.ButtonHoverForegroundColor = actionColor;
+
+            AppView.TitleBar.ButtonPressedBackgroundColor = actionColor;
+            AppView.TitleBar.ButtonPressedForegroundColor = mainColor;
+
+            AppView.TitleBar.BackgroundColor = mainColor;
+            AppView.TitleBar.ForegroundColor = actionColor;
+        }
+        protected override void OnLaunched(LaunchActivatedEventArgs e) {
+            var rootFrame = Window.Current.Content as Frame;
+            
+            LoadTheme();
+
             if (rootFrame == null) {
                 rootFrame = new Frame();
-
-                rootFrame.NavigationFailed += OnNavigationFailed;
                 
                 Window.Current.Content = rootFrame;
             }
@@ -32,10 +51,6 @@ namespace jcFUS.UWP {
 
                 Window.Current.Activate();
             }
-        }
-        
-        void OnNavigationFailed(object sender, NavigationFailedEventArgs e) {
-            throw new Exception("Failed to load Page " + e.SourcePageType.FullName);
         }
 
         private void OnSuspending(object sender, SuspendingEventArgs e) {
