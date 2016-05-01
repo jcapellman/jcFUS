@@ -2,18 +2,21 @@
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
+
 using Windows.Media;
 using Windows.Media.Audio;
 using Windows.Media.Capture;
 using Windows.Media.MediaProperties;
 using Windows.Media.Render;
+
 using jcFUS.PCL.Transports;
+using jcFUS.PCL.Transports.TextChat;
 
 namespace jcFUS.UWP.ViewModels {
     public class MainPageModel : INotifyPropertyChanged {
-        private ObservableCollection<ChatLogItem> _chatlog;
-        
-        public ObservableCollection<ChatLogItem> ChatLog {
+        private ObservableCollection<TextChatLogResponseItem> _chatlog;
+
+        public ObservableCollection<TextChatLogResponseItem> ChatLog {
             get { return _chatlog; }
             set { _chatlog = value; OnPropertyChanged(); }
         }
@@ -23,10 +26,10 @@ namespace jcFUS.UWP.ViewModels {
         public ObservableCollection<PersonItem> ConnectedPeople {
             get { return _connectedPeople; }
             set { _connectedPeople = value; OnPropertyChanged(); }
-        }  
+        }
 
         public MainPageModel() {
-            ChatLog = new ObservableCollection<ChatLogItem>();
+            ChatLog = new ObservableCollection<TextChatLogResponseItem>();
 
             ConnectedPeople = new ObservableCollection<PersonItem>();
 
@@ -60,10 +63,9 @@ namespace jcFUS.UWP.ViewModels {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
 
-        public async void EnableMicrophone()
-        {
+        public async void EnableMicrophone() {
             AudioGraphSettings settings = new AudioGraphSettings(AudioRenderCategory.Communications);
-        
+
             settings.DesiredRenderDeviceAudioProcessing = Windows.Media.AudioProcessing.Default;
             settings.QuantumSizeSelectionMode = QuantumSizeSelectionMode.LowestLatency;
 
@@ -80,7 +82,7 @@ namespace jcFUS.UWP.ViewModels {
             audioGraph.QuantumProcessed += AudioGraphy_QuantumProcessed;
 
             audioGraph.Start();
-           
+
         }
 
         private AudioFrameOutputNode frameOutputNode;

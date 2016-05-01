@@ -1,6 +1,6 @@
-﻿using Microsoft.AspNet.Mvc;
+﻿using System.Web.Http;
 
 namespace jcFUS.WebAPI.Controllers {
-    [Route("api/[controller]")]
-    public class BaseController : Controller { }
+    [RoutePrefix("api/")]
+    public class BaseController : ApiController { }
 }

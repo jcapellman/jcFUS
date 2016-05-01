@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Runtime.Serialization;
 
-namespace jcFUS.PCL.Transports {
+namespace jcFUS.PCL.Transports.TextChat {
     [DataContract]
-    public class ChatLogItem {
+    public class TextChatLogResponseItem {
         [DataMember]
         public string Entry { get; set; }
 
