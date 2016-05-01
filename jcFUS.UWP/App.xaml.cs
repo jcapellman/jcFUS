@@ -33,6 +33,7 @@ namespace jcFUS.UWP {
             AppView.TitleBar.BackgroundColor = mainColor;
             AppView.TitleBar.ForegroundColor = actionColor;
         }
+        
         protected override void OnLaunched(LaunchActivatedEventArgs e) {
             var rootFrame = Window.Current.Content as Frame;
             
