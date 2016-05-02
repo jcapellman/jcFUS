@@ -2,13 +2,13 @@
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
-
+using System.Threading.Tasks;
 using Windows.Media;
 using Windows.Media.Audio;
 using Windows.Media.Capture;
 using Windows.Media.MediaProperties;
 using Windows.Media.Render;
-
+using jcFUS.PCL.Handlers;
 using jcFUS.PCL.Transports;
 using jcFUS.PCL.Transports.TextChat;
 
@@ -47,14 +47,17 @@ namespace jcFUS.UWP.ViewModels {
             set { _chatEntry = value; OnPropertyChanged(); }
         }
 
-        public void SubmitChat() {
-            ChatLog.Add(new ChatLogItem {
-                Entry = ChatEntry,
-                Timestamp = DateTime.Now,
-                Username = "Jarred"
-            });
+        public async Task<bool> SubmitChat() {
+            var textChatHandler = new TextChatHandler(App.CURRENT_USER.Token);
 
+            var result = await textChatHandler.SubmitNewEntry(new TextChatCreationRequestItem {
+                ChannelGUID = Guid.NewGuid(),
+                Entry = ChatEntry
+            });
+            
             ChatEntry = string.Empty;
+
+            return result;
         }
 
         public event PropertyChangedEventHandler PropertyChanged;

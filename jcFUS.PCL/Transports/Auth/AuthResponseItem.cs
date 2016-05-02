@@ -5,6 +5,9 @@ namespace jcFUS.PCL.Transports.Auth {
     [DataContract]
     public class AuthResponseItem {
         [DataMember]
+        public string Token { get; set; }
+
+        [DataMember]
         public string ColorString { get; set; }
 
         [DataMember]

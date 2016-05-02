@@ -1,6 +1,8 @@
-﻿using System.Linq;
+﻿using System;
+using System.Linq;
 
 using Windows.System;
+using Windows.UI.Popups;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Input;
 
@@ -16,12 +18,16 @@ namespace jcFUS.UWP {
             DataContext = new MainPageModel();
         }
 
-        private void UIElement_OnKeyUp(object sender, KeyRoutedEventArgs e) {
+        private async void UIElement_OnKeyUp(object sender, KeyRoutedEventArgs e) {
             if (e.Key != VirtualKey.Enter) {
                 return;
             }
 
-            viewModel.SubmitChat();
+            var result = await viewModel.SubmitChat();
+
+            if (!result) {
+                await new MessageDialog("Message was not sent").ShowAsync();
+            }
 
             var lastItem = lvChat.Items.LastOrDefault();
 

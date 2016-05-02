@@ -4,6 +4,7 @@ using Windows.UI;
 using Windows.UI.ViewManagement;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
+using jcFUS.PCL.Transports.Auth;
 
 namespace jcFUS.UWP {
 
@@ -12,6 +13,8 @@ namespace jcFUS.UWP {
             this.InitializeComponent();
             this.Suspending += OnSuspending;
         }
+
+        public static AuthResponseItem CURRENT_USER;
 
         private void LoadTheme() {
             var mainColor = Color.FromArgb(0xFF, 0x2e, 0x2e, 0x2e);
