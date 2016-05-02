@@ -21,7 +21,8 @@ namespace jcFUS.WebAPI.Managers {
                 return new AuthResponseItem {
                     ColorString = result.ColorString,
                     DisplayName = result.DisplayName,
-                    DefaultChannelGUID = result.DefaultChannelGUID
+                    DefaultChannelGUID = result.DefaultChannelGUID,
+                    Token = result.Token
                 };
             }
         }

@@ -7,5 +7,7 @@ namespace jcFUS.WebAPI.DataLayerLibrary.EFObjects {
         public string DisplayName { get; set; }
         
         public Guid DefaultChannelGUID { get; set; }
+
+        public string Token { get; set; }
     }
 }
