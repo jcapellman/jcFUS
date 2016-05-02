@@ -7,7 +7,7 @@ using jcFUS.WebAPI.DataLayerLibrary.Entities;
 
 namespace jcFUS.WebAPI.Managers {
     public class AuthManager : BaseManager {
-        public async Task<AuthResponseItem> CheckAuth(AuthRequestItem requestItem) {
+        public async Task<AuthResponseItem> CheckAuthAsync(AuthRequestItem requestItem) {
             using (var eFactory = new EFModel()) {
                 var result =
                     await eFactory.Database.SqlQuery<WEBAPI_getUserProfileSP>("WEBAPI_getUserProfileSP @Username, @Password",
