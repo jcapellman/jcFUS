@@ -34,9 +34,9 @@ namespace jcFUS.UWP.ViewModels {
             ConnectedPeople = new ObservableCollection<PersonItem>();
 
             ConnectedPeople.Add(new PersonItem {
-                Color = "Green",
+                Color = App.CURRENT_USER.ColorString,
                 GUID = Guid.NewGuid(),
-                Name = "Jarred"
+                Name = App.CURRENT_USER.DisplayName
             });
         }
 
@@ -51,7 +51,7 @@ namespace jcFUS.UWP.ViewModels {
             var textChatHandler = new TextChatHandler(App.CURRENT_USER.Token);
 
             var result = await textChatHandler.SubmitNewEntry(new TextChatCreationRequestItem {
-                ChannelGUID = Guid.NewGuid(),
+                ChannelGUID = App.CURRENT_USER.DefaultChannelGUID,
                 Entry = ChatEntry
             });
             
