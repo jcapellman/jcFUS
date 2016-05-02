@@ -10,7 +10,7 @@ using jcFUS.WebAPI.DataLayerLibrary.Entities;
 
 namespace jcFUS.WebAPI.Managers {
     public class TextChatManager : BaseManager {
-        public async Task<List<TextChatLogResponseItem>> GetChatLogFromChannel(Guid channelGUID) {
+        public async Task<List<TextChatLogResponseItem>> GetChatLogFromChannelAsync(Guid channelGUID) {
             using (var eFactory = new EFModel()) {
                 var result =
                     await

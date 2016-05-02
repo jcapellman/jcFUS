@@ -46,6 +46,7 @@
     <Compile Include="Transports\Auth\AuthResponseItem.cs" />
     <Compile Include="Transports\TextChat\TextChatLogResponseItem.cs" />
     <Compile Include="Transports\PersonItem.cs" />
+    <Compile Include="Transports\TextChat\TextChatRequestItem.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Newtonsoft.Json, Version=8.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">

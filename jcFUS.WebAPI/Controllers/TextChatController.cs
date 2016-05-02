@@ -8,6 +8,6 @@ using jcFUS.WebAPI.Managers;
 namespace jcFUS.WebAPI.Controllers {
     public class TextChatController : BaseController {
         public async Task<List<TextChatLogResponseItem>> GET(Guid channelGUID)
-            => await new TextChatManager().GetChatLogFromChannel(channelGUID);
+            => await new TextChatManager().GetChatLogFromChannelAsync(channelGUID);
     }
 }
