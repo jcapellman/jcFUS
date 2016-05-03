@@ -3,17 +3,20 @@ using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using System.Threading.Tasks;
+
 using Windows.Media;
 using Windows.Media.Audio;
 using Windows.Media.Capture;
 using Windows.Media.MediaProperties;
 using Windows.Media.Render;
+
 using jcFUS.PCL.Handlers;
 using jcFUS.PCL.Transports;
 using jcFUS.PCL.Transports.TextChat;
 
 namespace jcFUS.UWP.ViewModels {
     public class MainPageModel : INotifyPropertyChanged {
+
         private ObservableCollection<TextChatLogResponseItem> _chatlog;
 
         public ObservableCollection<TextChatLogResponseItem> ChatLog {

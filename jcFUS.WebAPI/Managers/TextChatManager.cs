@@ -10,6 +10,8 @@ using jcFUS.WebAPI.DataLayerLibrary.Entities;
 
 namespace jcFUS.WebAPI.Managers {
     public class TextChatManager : BaseManager {
+        public TextChatManager(Guid userGUID) : base(userGUID) { }
+
         public async Task<List<TextChatLogResponseItem>> GetChatLogFromChannelAsync(Guid channelGUID) {
             using (var eFactory = new EFModel()) {
                 var result =
@@ -21,6 +23,18 @@ namespace jcFUS.WebAPI.Managers {
                     Username = a.Username,
                     Timestamp = a.Timestamp
                 }).ToList();
+            }
+        }
+
+        public async Task<bool> PostTextChatAsync(TextChatCreationRequestItem requestItem) {
+            using (var eFactory = new EFModel()) {
+                var result = await eFactory.Database.ExecuteSqlCommandAsync("WEBAPI_addChannelChatSP @ChatEntry, @UserGUID, @ChannelGUID",
+                    new SqlParameter("@ChatEntry", requestItem.Entry), new SqlParameter("@UserGUID", Guid.Empty),
+                    new SqlParameter("@ChannelGUID", requestItem.ChannelGUID));
+
+                TCHub.Send(requestItem);
+
+                return true;
             }
         }
     }
