@@ -16,7 +16,6 @@ using jcFUS.PCL.Transports.TextChat;
 
 namespace jcFUS.UWP.ViewModels {
     public class MainPageModel : INotifyPropertyChanged {
-
         private ObservableCollection<TextChatLogResponseItem> _chatlog;
 
         public ObservableCollection<TextChatLogResponseItem> ChatLog {
