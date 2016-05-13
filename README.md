@@ -29,3 +29,12 @@ Below are the current feature set roll outs for each release (subject to change)
 <ol>
   <li>Screen share support</li>
 </ol>
+
+<h2>Release Schedule<h2>
+<ol>
+<li>Version 0.1 - June 2016</li>
+<li>Version 0.2 - July 2016</li>
+<li>Version 0.3 - August 2016</li>
+<li>Version 0.4 - October 2016</li>
+<li>Version 0.5 - December 2016</li>
+</ol>
