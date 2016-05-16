@@ -152,6 +152,7 @@
     <Compile Include="Controllers\AuthController.cs" />
     <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\BaseHubController.cs" />
+    <Compile Include="Controllers\CustomerController.cs" />
     <Compile Include="Controllers\TextChatController.cs" />
     <Compile Include="Filters\AuthFilter.cs" />
     <Compile Include="Global.asax.cs">
@@ -160,6 +161,7 @@
     <Compile Include="Hubs\ITextChatHub.cs" />
     <Compile Include="Managers\AuthManager.cs" />
     <Compile Include="Managers\BaseManager.cs" />
+    <Compile Include="Managers\LocationManager.cs" />
     <Compile Include="Managers\TextChatManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
