@@ -53,6 +53,9 @@
   <ItemGroup>
     <Compile Include="EFObjects\BaseObject.cs" />
     <Compile Include="EFObjects\Locations.cs" />
+    <Compile Include="EFObjects\Room.cs" />
+    <Compile Include="EFObjects\Users.cs" />
+    <Compile Include="EFObjects\Users2Locations.cs" />
     <Compile Include="EFObjects\WEBAPI_getTextChatLogFromChannelSP.cs" />
     <Compile Include="EFObjects\WEBAPI_getUserProfileSP.cs" />
     <Compile Include="Entities\EFModel.cs" />

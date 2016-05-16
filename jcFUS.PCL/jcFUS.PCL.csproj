@@ -38,6 +38,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Common\Constants.cs" />
+    <Compile Include="Enums\EmailTypes.cs" />
     <Compile Include="Handlers\AuthHandler.cs" />
     <Compile Include="Handlers\BaseHandler.cs" />
     <Compile Include="Handlers\TextChatHandler.cs" />
@@ -45,9 +46,11 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Transports\Auth\AuthRequestItem.cs" />
     <Compile Include="Transports\Auth\AuthResponseItem.cs" />
+    <Compile Include="Transports\Customer\CustomerCreationRequestItem.cs" />
     <Compile Include="Transports\TextChat\TextChatLogResponseItem.cs" />
     <Compile Include="Transports\PersonItem.cs" />
     <Compile Include="Transports\TextChat\TextChatRequestItem.cs" />
+    <Compile Include="Transports\Users\UserCreationRequestItem.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Microsoft.AspNet.SignalR.Client, Version=2.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
