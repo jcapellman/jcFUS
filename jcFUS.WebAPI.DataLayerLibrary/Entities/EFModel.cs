@@ -1,6 +1,7 @@
 using System;
 using System.Data.Entity;
-using jcFUS.WebAPI.DataLayerLibrary.EFObjects;
+
+using jcFUS.WebAPI.DataLayerLibrary.EFObjects.Tables;
 
 namespace jcFUS.WebAPI.DataLayerLibrary.Entities {    
     public class EFModel : DbContext {
@@ -9,6 +10,8 @@ namespace jcFUS.WebAPI.DataLayerLibrary.Entities {
         public DbSet<Users> UserSet { get; set; }
 
         public DbSet<Room> RoomSet { get; set; }
+
+        public DbSet<EmailSentLog> EmailSentLogs { get; set; }
 
         public DbSet<Users2Locations> Users2LocationSet { get; set; }
 

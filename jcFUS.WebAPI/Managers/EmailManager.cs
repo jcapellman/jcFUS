@@ -28,9 +28,17 @@ namespace jcFUS.WebAPI.Managers {
             }
         }
 
-        private void recordEmail(EmailTypes emailType, Guid receiverUserGUID, string subject, string body) {
+        private async void recordEmail(EmailTypes emailType, Guid receiverUserGUID, string subject, string body) {
             using (var eFactory = new EFModel()) {
+                var logEntry = eFactory.EmailSentLogs.Create();
 
+                logEntry.Body = body;
+                logEntry.EmailTypeID = (int) emailType;
+                logEntry.ReceiverUserGUID = receiverUserGUID;
+                logEntry.SubjectLine = subject;
+
+                eFactory.EmailSentLogs.Add(logEntry);
+                await eFactory.SaveChangesAsync();
             }
         }
     }
