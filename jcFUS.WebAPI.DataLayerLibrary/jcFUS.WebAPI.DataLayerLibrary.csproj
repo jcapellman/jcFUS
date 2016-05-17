@@ -51,13 +51,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="EFObjects\BaseObject.cs" />
-    <Compile Include="EFObjects\Locations.cs" />
-    <Compile Include="EFObjects\Room.cs" />
-    <Compile Include="EFObjects\Users.cs" />
-    <Compile Include="EFObjects\Users2Locations.cs" />
-    <Compile Include="EFObjects\WEBAPI_getTextChatLogFromChannelSP.cs" />
-    <Compile Include="EFObjects\WEBAPI_getUserProfileSP.cs" />
+    <Compile Include="EFObjects\Tables\BaseTableObject.cs" />
+    <Compile Include="EFObjects\Tables\EmailContent.cs" />
+    <Compile Include="EFObjects\Tables\Locations.cs" />
+    <Compile Include="EFObjects\Tables\Room.cs" />
+    <Compile Include="EFObjects\Tables\EmailSentLog.cs" />
+    <Compile Include="EFObjects\Tables\Users.cs" />
+    <Compile Include="EFObjects\Tables\Users2Locations.cs" />
+    <Compile Include="EFObjects\StoredProcedures\WEBAPI_getTextChatLogFromChannelSP.cs" />
+    <Compile Include="EFObjects\StoredProcedures\WEBAPI_getUserProfileSP.cs" />
     <Compile Include="Entities\EFModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
