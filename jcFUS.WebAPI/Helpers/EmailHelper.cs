@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Net.Mail;
 
 namespace jcFUS.WebAPI.Helpers {
@@ -11,11 +10,12 @@ namespace jcFUS.WebAPI.Helpers {
             using (var smtpClient = new SmtpClient()) {
                 var mm = new MailMessage();
 
-                mm.To.Add(String.Join(",", receivers));
+                mm.To.Add(string.Join(",", receivers));
 
                 mm.Subject = subject;
                 mm.Body = body;
-                
+                mm.IsBodyHtml = true;
+
                 smtpClient.SendAsync(mm, null);
             }
         }
