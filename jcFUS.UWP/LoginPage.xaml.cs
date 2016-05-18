@@ -8,7 +8,7 @@ using jcFUS.UWP.ViewModels;
 
 namespace jcFUS.UWP {
     public sealed partial class LoginPage : Page {
-        private LoginPageModel viewModel => (LoginPageModel) DataContext;
+        private LoginPageModel viewModel => (LoginPageModel)DataContext;
 
         public LoginPage() {
             this.InitializeComponent();
@@ -27,7 +27,20 @@ namespace jcFUS.UWP {
 
             App.CURRENT_USER = result;
 
-            Frame.Navigate(typeof (MainPage));
+            Frame.Navigate(typeof(MainPage));
+        }
+
+        private void btnRegister_Clicked(object sender, RoutedEventArgs e) {
+            if (pRegister.IsOpen) {
+                return;
+            }
+
+            pRegister.IsOpen = true;
+        }
+
+        private void btnSubmitRegistration_Clicked(object sender, RoutedEventArgs e) {
+
+
         }
     }
 }

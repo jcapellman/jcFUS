@@ -20,6 +20,7 @@
                 <RowDefinition Height="Auto" />
 
                 <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
             </Grid.RowDefinitions>
 
             <Image Grid.Row="0" Width="150" Height="150" Source="Assets/Square150x150Logo.png" />
@@ -31,6 +32,48 @@
             <PasswordBox Grid.Row="4" Margin="0,5,0,0" Password="{Binding Password, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
 
             <Button Grid.Row="5" Margin="0,20,0,0" Style="{StaticResource MainButton}" Content="LOGIN" Click="btnLogin_Clicked" />
+            
+            <Button Grid.Row="6" Margin="0,20,0,0" Style="{StaticResource MainButton}" Content="REGISTER" Click="btnRegister_Clicked" />
         </Grid>
+        
+        <Popup x:Name="pRegister" IsLightDismissEnabled="True" HorizontalOffset="200" VerticalOffset="200">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+
+                <TextBlock Grid.Row="0" Style="{StaticResource PageLabel}" Text="Register New User" />
+                
+                <TextBlock Grid.Row="1" Margin="0,10,0,0" Style="{StaticResource LoginPageFieldLabel}" Text="display name" />
+                <TextBox Grid.Row="2" Margin="0,5,0,0"  Text="{Binding DisplayName, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+
+                <TextBlock Grid.Row="3" Margin="0,10,0,0" Style="{StaticResource LoginPageFieldLabel}" Text="email address" />
+                <TextBox Grid.Row="4" Margin="0,5,0,0"  Text="{Binding DisplayName, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+
+                <TextBlock Grid.Row="5" Margin="0,10,0,0" Style="{StaticResource LoginPageFieldLabel}" Text="password" />
+                <PasswordBox Grid.Row="6" Margin="0,5,0,0" Password="{Binding DisplayName, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+
+                <Grid Grid.Row="7">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+
+                    <Button Grid.Column="0" Margin="0,20,0,0" Style="{StaticResource MainButton}" Content="CANCEL" />
+                    <Button Grid.Column="1" Margin="0,20,0,0" Style="{StaticResource ActionButton}" HorizontalAlignment="Right" Content="SUBMIT" Click="btnSubmitRegistration_Clicked" />
+                </Grid>
+            </Grid>
+        </Popup>
     </Grid>
 </Page>
