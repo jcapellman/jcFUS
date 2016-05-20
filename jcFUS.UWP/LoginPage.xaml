@@ -35,8 +35,8 @@
             
             <Button Grid.Row="6" Margin="0,20,0,0" Style="{StaticResource MainButton}" Content="REGISTER" Click="btnRegister_Clicked" />
         </Grid>
-        
-        <Popup x:Name="pRegister" IsLightDismissEnabled="True" HorizontalOffset="200" VerticalOffset="200">
+
+        <Flyout Grid.Row="0" x:Name="pRegister">
             <Grid>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="Auto" />
@@ -74,6 +74,6 @@
                     <Button Grid.Column="1" Margin="0,20,0,0" Style="{StaticResource ActionButton}" HorizontalAlignment="Right" Content="SUBMIT" Click="btnSubmitRegistration_Clicked" />
                 </Grid>
             </Grid>
-        </Popup>
+        </Flyout>
     </Grid>
 </Page>
