@@ -154,12 +154,13 @@
     <Compile Include="Controllers\BaseHubController.cs" />
     <Compile Include="Controllers\CustomerController.cs" />
     <Compile Include="Controllers\TextChatController.cs" />
+    <Compile Include="Controllers\TextChatHubController.cs" />
     <Compile Include="Filters\AuthFilter.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Helpers\EmailHelper.cs" />
-    <Compile Include="Hubs\ITextChatHub.cs" />
+    <Compile Include="Hubs\TextChatHub.cs" />
     <Compile Include="Managers\AuthManager.cs" />
     <Compile Include="Managers\BaseManager.cs" />
     <Compile Include="Managers\CustomerManager.cs" />

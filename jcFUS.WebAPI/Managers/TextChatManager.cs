@@ -31,9 +31,7 @@ namespace jcFUS.WebAPI.Managers {
                 var result = await eFactory.Database.ExecuteSqlCommandAsync("WEBAPI_addChannelChatSP @ChatEntry, @UserGUID, @ChannelGUID",
                     new SqlParameter("@ChatEntry", requestItem.Entry), new SqlParameter("@UserGUID", Guid.Empty),
                     new SqlParameter("@ChannelGUID", requestItem.ChannelGUID));
-
-                TCHub.Send(requestItem);
-
+                
                 return true;
             }
         }

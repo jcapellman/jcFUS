@@ -1,6 +1,9 @@
-﻿using Windows.UI.Xaml;
+﻿using System;
+using Windows.UI.Popups;
+using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using jcFUS.UWP.ViewModels;
+using Microsoft.AspNet.SignalR.Client;
 
 namespace jcFUS.UWP {
     public sealed partial class RegisterPage : Page {
@@ -8,11 +11,12 @@ namespace jcFUS.UWP {
 
         public RegisterPage() {
             this.InitializeComponent();
+
+            DataContext = new RegisterModel();
         }
 
-        private void btnSubmit_OnClick(object sender, RoutedEventArgs e)
-        {
-            
+        private void btnSubmit_OnClick(object sender, RoutedEventArgs e) {
+                
         }
 
         private void btnCancel_OnClick(object sender, RoutedEventArgs e) {
