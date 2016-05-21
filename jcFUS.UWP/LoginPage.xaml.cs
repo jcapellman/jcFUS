@@ -31,16 +31,7 @@ namespace jcFUS.UWP {
         }
 
         private void btnRegister_Clicked(object sender, RoutedEventArgs e) {
-            if (pRegister.IsOpen) {
-                return;
-            }
-
-            pRegister.IsOpen = true;
-        }
-
-        private void btnSubmitRegistration_Clicked(object sender, RoutedEventArgs e) {
-
-
+            this.Frame.Navigate(typeof (RegisterPage));
         }
     }
 }
