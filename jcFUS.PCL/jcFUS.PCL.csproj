@@ -39,6 +39,7 @@
   <ItemGroup>
     <Compile Include="Common\Constants.cs" />
     <Compile Include="Enums\EmailTypes.cs" />
+    <Compile Include="Enums\ErrorCodes.cs" />
     <Compile Include="Handlers\AuthHandler.cs" />
     <Compile Include="Handlers\BaseHandler.cs" />
     <Compile Include="Handlers\TextChatHandler.cs" />
@@ -47,6 +48,7 @@
     <Compile Include="Transports\Auth\AuthRequestItem.cs" />
     <Compile Include="Transports\Auth\AuthResponseItem.cs" />
     <Compile Include="Transports\Customer\CustomerCreationRequestItem.cs" />
+    <Compile Include="Transports\Global\ReturnSet.cs" />
     <Compile Include="Transports\TextChat\TextChatLogResponseItem.cs" />
     <Compile Include="Transports\PersonItem.cs" />
     <Compile Include="Transports\TextChat\TextChatRequestItem.cs" />
