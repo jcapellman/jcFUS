@@ -8,7 +8,7 @@ using Windows.UI.Xaml.Input;
 
 using jcFUS.UWP.ViewModels;
 
-namespace jcFUS.UWP {
+namespace jcFUS.UWP.Views {
     public sealed partial class MainPage : Page {
         private MainPageModel viewModel => (MainPageModel)DataContext;
 

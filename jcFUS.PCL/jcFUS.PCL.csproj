@@ -42,6 +42,7 @@
     <Compile Include="Enums\ErrorCodes.cs" />
     <Compile Include="Handlers\AuthHandler.cs" />
     <Compile Include="Handlers\BaseHandler.cs" />
+    <Compile Include="Handlers\CustomerHandler.cs" />
     <Compile Include="Handlers\TextChatHandler.cs" />
     <Compile Include="Hubs\ChatHub.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

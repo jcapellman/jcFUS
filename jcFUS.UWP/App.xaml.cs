@@ -4,7 +4,9 @@ using Windows.UI;
 using Windows.UI.ViewManagement;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
+
 using jcFUS.PCL.Transports.Auth;
+using jcFUS.UWP.Views;
 
 namespace jcFUS.UWP {
 

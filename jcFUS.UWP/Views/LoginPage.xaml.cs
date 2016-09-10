@@ -6,7 +6,7 @@ using Windows.UI.Xaml.Controls;
 
 using jcFUS.UWP.ViewModels;
 
-namespace jcFUS.UWP {
+namespace jcFUS.UWP.Views {
     public sealed partial class LoginPage : Page {
         private LoginPageModel viewModel => (LoginPageModel)DataContext;
 

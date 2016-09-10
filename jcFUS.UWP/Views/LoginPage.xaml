@@ -1,8 +1,8 @@
 ﻿<Page
-    x:Class="jcFUS.UWP.LoginPage"
+    x:Class="jcFUS.UWP.Views.LoginPage"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:local="using:jcFUS.UWP"
+    xmlns:local="using:jcFUS.UWP.Views"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     Style="{StaticResource MainPage}"
@@ -23,7 +23,7 @@
                 <RowDefinition Height="Auto" />
             </Grid.RowDefinitions>
 
-            <Image Grid.Row="0" Width="150" Height="150" Source="Assets/Square150x150Logo.png" />
+            <Image Grid.Row="0" Width="150" Height="150" Source="/Assets/StoreLogo.png" />
 
             <TextBlock Grid.Row="1" Margin="0,10,0,0" Style="{StaticResource LoginPageFieldLabel}" Text="email address" />
             <TextBox Grid.Row="2" Margin="0,5,0,0"  Text="{Binding EmailAddress, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
@@ -31,9 +31,11 @@
             <TextBlock Grid.Row="3" Margin="0,10,0,0" Style="{StaticResource LoginPageFieldLabel}" Text="password" />
             <PasswordBox Grid.Row="4" Margin="0,5,0,0" Password="{Binding Password, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
 
-            <Button Grid.Row="5" Margin="0,20,0,0" Style="{StaticResource ActionButton}" Content="LOGIN" Click="btnLogin_Clicked" />
+            <Button Grid.Row="5" Margin="0,20,0,0" Style="{StaticResource ActionButton}" IsEnabled="{Binding EnableForm, Mode=OneWay}" Content="LOGIN" Click="btnLogin_Clicked" />
 
-            <Button Grid.Row="6" Margin="0,20,0,0" Style="{StaticResource MainButton}" Content="REGISTER" Click="btnRegister_Clicked" />
+            <Button Grid.Row="6" Margin="0,20,0,0" Style="{StaticResource MainButton}" IsEnabled="{Binding EnableForm, Mode=OneWay}" Content="REGISTER" Click="btnRegister_Clicked" />
+
+            <ProgressBar Grid.Row="0" Grid.RowSpan="6" IsIndeterminate="True" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="White" Width="100" Height="100" Visibility="{Binding ShowProgressBar, Mode=OneWay}" />
         </Grid>
     </Grid>
 </Page>

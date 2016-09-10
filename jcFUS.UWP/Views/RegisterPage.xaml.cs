@@ -5,7 +5,7 @@ using Windows.UI.Xaml.Controls;
 using jcFUS.UWP.ViewModels;
 using Microsoft.AspNet.SignalR.Client;
 
-namespace jcFUS.UWP {
+namespace jcFUS.UWP.Views {
     public sealed partial class RegisterPage : Page {
         private RegisterModel viewModel => (RegisterModel)DataContext;
 
